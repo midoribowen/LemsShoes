@@ -1,8 +1,10 @@
 package com.epicodus.lemsshoes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -27,15 +29,6 @@ public class MainActivity extends AppCompatActivity
         this.getSupportActionBar().setLogo(R.drawable.logo);
         this.getSupportActionBar().setTitle("");
         this.getSupportActionBar().setDisplayUseLogoEnabled(true);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -85,20 +78,24 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_women) {
+            Intent intent = new Intent(this, WomenActivity.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_men) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_untechnology) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_ourStory) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_blog) {
+
+        } else if (id == R.id.nav_contact) {
+
+        } else if (id == R.id.nav_social) {
 
         }
-
+//
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
